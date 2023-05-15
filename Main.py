@@ -1,5 +1,8 @@
+import requests
+
 # Variables
-wordToGuess = "because"
+response_API = requests.get('https://random-word-api.herokuapp.com/word?length=5')
+wordToGuess = response_API.text.strip("[\"\"]")
 correctGuessedLetters = []
 incorrectGuessedLetters = []
 continueToGuess = True
